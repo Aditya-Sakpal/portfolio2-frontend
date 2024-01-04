@@ -1,18 +1,28 @@
 const express=require('express')
 const {Certification,Project,Experience,Feedback} = require('./connect');
 const cors = require('cors');
+const path = require("path");
+
 
 require('dotenv').config({ path: './.env' });
 const axios = require('axios');
 
 const app=express()
 const port = 4000
-app.use(cors());
+  
 app.use(express.json());
-
+app.use(cors({
+  origin:['https://portfolio-frontend-brown-nine.vercel.app'],
+  methods:['POST','GET'],
+  credentials:true
+}))
 
 const {HUGGING_FACE_API}=process.env
 const {CHAT_API_KEY}=process.env
+
+app.use("/",(req,res)=>{
+  res.send("Server is running")
+})
 
 app.get('/certifications', async (req, res) => {
     try {
