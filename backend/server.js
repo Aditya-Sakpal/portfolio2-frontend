@@ -2,7 +2,7 @@ const express=require('express')
 const {Certification,Project,Experience,Feedback} = require('./connect');
 const cors = require('cors');
 const path = require("path");
-
+const zlib = require('zlib');
 
 require('dotenv').config({ path: './.env' });
 const axios = require('axios');
@@ -11,16 +11,12 @@ const app=express()
 const port = 4000
   
 app.use(express.json());
-app.use(cors({
-  origin:['https://portfolio-frontend-brown-nine.vercel.app'],
-  methods:['POST','GET'],
-  credentials:true
-}))
+app.use(cors())
 
 const {HUGGING_FACE_API}=process.env
 const {CHAT_API_KEY}=process.env
 
-app.use("/",(req,res)=>{
+app.get("/",(req,res)=>{
   res.send("Server is running")
 })
 
@@ -69,7 +65,12 @@ app.get('/certifications', async (req, res) => {
         experience,
         feedbacks
       };
-      res.status(200).json(combinedData);
+      const json = JSON.stringify(combinedData);
+      const compressedData = zlib.gzipSync(json);
+  
+      res.setHeader('Content-Encoding', 'gzip');
+  
+      res.status(200).send(compressedData);
     }catch(e){
       res.status(500).send('Internal Server Error');
     }
