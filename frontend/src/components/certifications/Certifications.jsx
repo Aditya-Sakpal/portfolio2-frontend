@@ -8,6 +8,7 @@ import link from '../../assets/PYTHON(LIBRARIES) CERTIFICATE.pdf'
 import { useSpring, animated } from "react-spring";
 import { useSelector } from "react-redux";
 import { useNavigate } from 'react-router-dom';
+import img from '../../assets/microsoft.png'
 
 function Certifications() {
   const [certifications, setCertifications] = useState([])
@@ -16,6 +17,10 @@ function Certifications() {
 
   const data = useSelector((state)=>state.data.data)
   const history = useNavigate()
+  useEffect(()=>{
+    console.log(img)
+  })
+
   useEffect(() => {
     if (sessionStorage.getItem('reloaded')) {
       history('/')
@@ -70,7 +75,7 @@ function Certifications() {
               <div style={{ transform:isMobileView ? 'rotate(90deg)': '', width: '100%', height: isMobileView ? 'fit-content' : '100%' }}>
                 <Viewer fileUrl={pdfPath} defaultScale={isMobileView ? 0.45 : 0.7} />
               </div>
-            </Worker>
+            </Worker> 
           </animated.div>
         </div>
       )}
@@ -80,7 +85,7 @@ function Certifications() {
             certifications.map(certification => (
               <div key={certification._id} className={isMobileView ? 'mobile-certificate-div' : 'certificate-div'} onClick={() => showPopup(certification.path)}>
                 <div className={isMobileView ? "mobile-certificate-div-img" : "certificate-div-img"}>
-                  {certification.image && renderImage(certification.image.data)}
+                  {certification.img_path ? <img src={certification.img_path} alt="" /> : <></> }
                 </div>
                 <div className={isMobileView ? "mobile-certificate-div-details" : "certificate-div-details"}>
                   <h4>{certification.cert_name}</h4>
