@@ -132,7 +132,7 @@ function Feedback() {
           console.log("I was closed by the timer");
         }
       });
-      const response = await axios.post("http://localhost:4000/feedbacks", { name, feedback })
+      const response = await axios.post("https://portfolio2-backend-xi.vercel.app/feedbacks", { name, feedback })
       setFeeds(response.data.feedbacks.reverse())
 
       dispatch(fetchData())
