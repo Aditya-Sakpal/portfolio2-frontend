@@ -35,6 +35,10 @@
   /* border: 1px solid black; */
 }
 
+.home-content-right img{
+  /* border: 1px solid black; */
+  margin-right: 1%;
+}
 .location-container {
   display: flex;
 
@@ -177,6 +181,8 @@
   width: 400px;
   height: 200px;
   justify-content: start;
+  margin-left: 1%;
+  /* border: 1px solid black; */
 }
 .intro_details span {
   justify-content: start;
