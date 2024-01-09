@@ -96,8 +96,6 @@ function Education() {
                                 </div>
                                 <div>
                                     <p>Subjects: English,Marathi,History,Geography,Mathematics(Algebra & Geometry),Hindi,IT</p>
-                                </div>
-                                <div>
                                     <p>SSC Score : 87%</p>
                                 </div>
                             </div>
@@ -108,8 +106,6 @@ function Education() {
                                 </div>
                                 <div>
                                     <p>Subjects: Physics,Chemistry,Maths,Biology,Hindi,English</p>
-                                </div>
-                                <div>
                                     <p>HSC Score : 60%</p>
                                 </div>
                             </div>
@@ -120,8 +116,6 @@ function Education() {
                                 </div>
                                 <div>
                                     <p>Subjects: Visual Reasoning,Logical Derivation,G.K. Architecture & Design,Language Interpretation,Design Sensitivity,Numerical Ability</p>
-                                </div>
-                                <div>
                                     <p>NATA Score : 141/200</p>
                                 </div>
                             </div>
@@ -132,8 +126,6 @@ function Education() {
                                 </div>
                                 <div>
                                     <p>Subjects: Microprocessor,CPP,JAVA,PYTHON,CG,Design Thinking,Data Science,DBMS,ADBMS,Computer Networks,OOPs,OS,AJAVA,Security in Computing,Software Engineering,AI....etc</p>
-                                </div>
-                                <div>
                                     <p>CGPA : 9.36/10</p>
                                 </div>
                             </div>
