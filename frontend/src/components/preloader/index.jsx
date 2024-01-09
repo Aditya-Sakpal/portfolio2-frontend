@@ -96,30 +96,6 @@ export const preLoaderAnim = () => {
       duration: 0,
       css: { display: "none" },
     });
-    setTimeout(()=>{
-      let timerInterval;
-      Swal.fire({
-        title: "Fetching Data from the server!",
-        html: "This popup will be closed in <b></b> milliseconds.",
-        timer: 7000,
-        timerProgressBar: true,
-        allowOutsideClick:false,
-        didOpen: () => {
-          Swal.showLoading();
-          const timer = Swal.getPopup().querySelector("b");
-          timerInterval = setInterval(() => {
-            timer.textContent = `${Swal.getTimerLeft()}`;
-          }, 100);
-        },
-        willClose: () => {
-          clearInterval(timerInterval);
-        }
-      }).then((result) => {
-        if (result.dismiss === Swal.DismissReason.timer) {
-          console.log("I was closed by the timer");
-        }
-      }); 
-    },4000)
 };
 
 export const openMenu = () => {
