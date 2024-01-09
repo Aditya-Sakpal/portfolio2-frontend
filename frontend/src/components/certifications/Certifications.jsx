@@ -15,9 +15,9 @@ function Certifications() {
   const [isPopUp, setIsPopUp] = useState(false);
   const [pdfPath, setPdfPath] = useState('')
 
-  const data = useSelector((state)=>state.data.data)
+  const data = useSelector((state) => state.data.data)
   const history = useNavigate()
-  useEffect(()=>{
+  useEffect(() => {
     console.log(img)
   })
 
@@ -25,9 +25,9 @@ function Certifications() {
     if (sessionStorage.getItem('reloaded')) {
       history('/')
       sessionStorage.removeItem('reloaded');
-    }else if (data){
+    } else if (data) {
       setCertifications(data.certifications);
-    } 
+    }
   }, []);
 
   window.addEventListener('beforeunload', function () {
@@ -42,10 +42,16 @@ function Certifications() {
     return <img src={imageUrl} alt="Certification" style={{ maxWidth: '100px', maxHeight: '100px' }} />;
   };
 
+  const [showRotateAnimation, setShowRotateAnimation] = useState(false)
+
   const showPopup = (pdf_path) => {
     console.log(link)
     setPdfPath(pdf_path)
     setIsPopUp(!isPopUp)
+    setShowRotateAnimation(true)
+    setTimeout(() => {
+      setShowRotateAnimation(false)
+    }, 2000)
 
   }
   const springProps = useSpring({
@@ -64,43 +70,53 @@ function Certifications() {
 
   return (
     <>
-    <Navbar />
-    {certifications.length > 0 ? <>
-      
-      {isPopUp && (
-        <div className={isMobileView ? "mobile-certificate-popup-container" : "certificate-popup-container"} onClick={() => setIsPopUp(false)}>
-          <animated.div className={isMobileView ? "mobile-certificate-popup" : "certificate-popup"} onClick={(event) => event.stopPropagation()} style={{ ...springProps }}>
+      <Navbar />
+      {certifications.length > 0 ? <>
 
-            <Worker workerUrl={`https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`}>
-              <div style={{ transform:isMobileView ? 'rotate(90deg)': '', width: '100%', height: isMobileView ? 'fit-content' : '100%' }}>
-                <Viewer fileUrl={pdfPath} defaultScale={isMobileView ? 0.45 : 0.7} />
-              </div>
-            </Worker> 
-          </animated.div>
-        </div>
-      )}
-      <div className={isMobileView ? "mobile-certifications-container" : "certifications-container"}>
-        <div className={isMobileView ? "mobile-certifications-content" : "certifications-content"}>
-          {certifications && certifications.length > 0 ?
-            certifications.map(certification => (
-              <div key={certification._id} className={isMobileView ? 'mobile-certificate-div' : 'certificate-div'} onClick={() => showPopup(certification.path)}>
-                <div className={isMobileView ? "mobile-certificate-div-img" : "certificate-div-img"}>
-                  {certification.img_path ? <img src={certification.img_path} alt="" /> : <></> }
+        {isPopUp && (
+          <div className={isMobileView ? "mobile-certificate-popup-container" : "certificate-popup-container"} onClick={() => setIsPopUp(false)}>
+            <animated.div className={isMobileView ? "mobile-certificate-popup" : "certificate-popup"} onClick={(event) => event.stopPropagation()} style={{ ...springProps }}>
+              {showRotateAnimation ? <>
+                <div class="phone">
                 </div>
-                <div className={isMobileView ? "mobile-certificate-div-details" : "certificate-div-details"}>
-                  <h4>{certification.cert_name}</h4>
-                  <h4>{certification.org_name}</h4>
-                  <p>Issue Date:{certification.issue_date}</p>
-                  <p>Expire Date:{certification.expire_date}</p>
-                  <p>Credential ID : {certification.credential_id}</p>
+                <div class="message">
+                  Please rotate your device!
                 </div>
-              </div>
-            ))
-            : <></>}
+              </> : <>
+
+
+                <Worker workerUrl={`https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`}>
+                  <div style={{ transform: isMobileView ? 'rotate(90deg)' : '', width: '100%', height: isMobileView ? 'fit-content' : '100%' }}>
+                    <Viewer fileUrl={pdfPath} defaultScale={isMobileView ? 0.45 : 0.7} loading={null} />
+                  </div>
+                </Worker>
+
+              </>}
+            </animated.div>
+          </div>
+        )}
+        <div className={isMobileView ? "mobile-certifications-container" : "certifications-container"}>
+          <div className={isMobileView ? "mobile-certifications-content" : "certifications-content"}>
+            {certifications && certifications.length > 0 ?
+              certifications.map(certification => (
+                <div key={certification._id} className={isMobileView ? 'mobile-certificate-div' : 'certificate-div'} onClick={() => showPopup(certification.path)}>
+                  <div className={isMobileView ? "mobile-certificate-div-img" : "certificate-div-img"}>
+                    {certification.img_path ? <img src={certification.img_path} alt="" /> : <></>}
+                  </div>
+                  <div className={isMobileView ? "mobile-certificate-div-details" : "certificate-div-details"}>
+                    <h4>{certification.cert_name}</h4>
+                    <h4>{certification.org_name}</h4>
+                    <p>Issue Date:{certification.issue_date}</p>
+                    <p>Expire Date:{certification.expire_date}</p>
+                    <p>Credential ID : {certification.credential_id}</p>
+                  </div>
+                </div>
+              ))
+              : <></>}
+          </div>
         </div>
-      </div>
-      </> 
-      : <></>}
+      </>
+        : <></>}
     </>
 
   )
