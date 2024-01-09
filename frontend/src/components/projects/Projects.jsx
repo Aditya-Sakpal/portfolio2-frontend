@@ -54,7 +54,6 @@ function Projects() {
                       {project.img_path ? <img src={project.img_path} alt="" /> : <></> }
                     </div>
                     <div className="project-div-details">
-                      <p>{project.img_path}</p>
                       <h3>{project.proj_name}</h3>
                       <h4>Tech Stack : {project.stack}</h4>
                       <p>Description : {project.description}</p>
