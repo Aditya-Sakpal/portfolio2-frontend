@@ -3,6 +3,8 @@ import './index.css'
 import Navbar from '../navbar/Navbar'
 import { useSelector } from "react-redux";
 import { useNavigate } from 'react-router-dom';
+import img from '../../assets/aitalkbot.png'
+
 
 function Projects() {
   const [projects, setProjects] = useState([])
@@ -49,7 +51,7 @@ function Projects() {
                 projects.map(project => (
                   <div key={project._id} className='project-div' onClick={() => handleUrlClick(project.url)}>
                     <div className="project-img">
-                      {project.image && renderImage(project.image.data)}
+                      {project.img_path ? <img src={project.img_path} alt="" /> : <></> }
                     </div>
                     <div className="project-div-details">
                       <h3>{project.proj_name}</h3>
@@ -67,7 +69,7 @@ function Projects() {
                 projects.map(project => (
                   <div key={project._id} className='mobile-project-div' onClick={() => handleUrlClick(project.url)}>
                     <div className="mobile-project-div-img">
-                      {project.image && renderImage(project.image.data)}
+                      {project.img_path ? <img src={project.img_path} alt="" /> : <></>}
                     </div>
                     <div className="mobile-project-div-details">
                       <h3>{project.proj_name}</h3>
