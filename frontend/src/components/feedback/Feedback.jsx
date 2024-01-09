@@ -62,7 +62,7 @@ function Feedback() {
         type: 'pie',
       },
       labels: ['Positive', 'Negative', 'Neutral'],
-      colors: ['#999D9E', '#1c1d21', '#ffff'],
+      colors: ['#fff', '#1c1d21', '#000'],
       responsive: [{
         breakpoint: 480,
         options: {
@@ -132,7 +132,7 @@ function Feedback() {
           console.log("I was closed by the timer");
         }
       });
-      const response = await axios.post("https://portfolio2-backend-xi.vercel.app/feedbacks", { name, feedback })
+      const response = await axios.post(`${window.location.origin}/feedbacks`, { name, feedback })
       setFeeds(response.data.feedbacks.reverse())
 
       dispatch(fetchData())
