@@ -155,9 +155,10 @@
     .mobile-certificate-popup-container{
         position: absolute;
         /* top: 15%; */
+        border: 1px solid black;
         z-index: 1;
         width: 100vw;
-        height: 85vh;
+        height: 75vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -173,7 +174,7 @@
         align-items: center;
         border-radius: 25px;
         width: 90%;
-        height: 80%;
+        height: 85%;
         box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
         rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
         padding:2%;
