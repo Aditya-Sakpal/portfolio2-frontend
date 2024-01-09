@@ -155,7 +155,7 @@
     .mobile-certificate-popup-container{
         position: absolute;
         /* top: 15%; */
-        border: 1px solid black;
+        /* border: 1px solid black; */
         z-index: 1;
         width: 100vw;
         height: 75vh;
