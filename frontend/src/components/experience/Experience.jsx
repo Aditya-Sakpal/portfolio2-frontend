@@ -50,7 +50,7 @@ function Experience() {
         lineCap: 'round', // Set the line cap style
       },
       title: {
-        text: 'Salaries at Companies',
+        text: 'Salaries at Companies in 2023',
         align: 'left',
         style: {
           color: "white"
