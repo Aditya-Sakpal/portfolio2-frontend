@@ -167,6 +167,8 @@ function Home() {
             <div className="mobile-welcome-msg" id="mobile-welcome-msg">
               <p>Welcome to my portfolio! I'm thrilled to have you here </p>
               <p> Grab a virtual seat and browse through my portfolio.</p>
+              <p>Explore my skills, projects, and experiences to get a glimpse of
+                my professional journey</p>
             </div>
             <div className="mobile-download-resume">
               <button onClick={handleDownload}>Download Resume</button>
