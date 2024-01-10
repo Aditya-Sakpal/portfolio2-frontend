@@ -7,8 +7,8 @@ import Navbar from "../navbar/Navbar";
 import resume from "../../assets/New_Resume.pdf";
 import Chatbot from "../chatbot/Chatbot";
 import { useDispatch, useSelector } from 'react-redux';
-import { showChatbot,hideChatbot } from "../../store/actions/botActions";
-import axios from 'axios'
+import { showChatbot, hideChatbot } from "../../store/actions/botActions";
+
 
 
 function Home() {
@@ -31,9 +31,9 @@ function Home() {
     const a =
       Math.sin(dLat / 2) * Math.sin(dLat / 2) +
       Math.cos(rad(19.0748)) *
-        Math.cos(rad(personCoords[0])) *
-        Math.sin(dLon / 2) *
-        Math.sin(dLon / 2);
+      Math.cos(rad(personCoords[0])) *
+      Math.sin(dLon / 2) *
+      Math.sin(dLon / 2);
 
     const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
     const distance = R * c;
@@ -57,7 +57,7 @@ function Home() {
       ]);
     };
 
-    const error = () => {};
+    const error = () => { };
     navigator.geolocation.getCurrentPosition(success, error);
   };
 
@@ -86,67 +86,67 @@ function Home() {
       <Navbar />
       {!isMobileView ? (
         <>
-        <div className="home-container">
-          <div className="home-content">
-            <div className="home-content-left">
-              <div className="intro-container">
-                <div className="intro_main" id="intro_main">
-                  <div className="intro_details">
-                    <span>Hello,it's me</span>
-                    <span className="name"> Aditya.Ashish.Sakpal</span>
+          <div className="home-container">
+            <div className="home-content">
+              <div className="home-content-left">
+                <div className="intro-container">
+                  <div className="intro_main" id="intro_main">
+                    <div className="intro_details">
+                      <span>Hello,it's me</span>
+                      <span className="name"> Aditya.Ashish.Sakpal</span>
 
-                    <span>I'm a Machine Learning Engineer/</span>
-                    <span>MERN Stack Developer/</span>
-                    <span>Azure Developer</span>
+                      <span>I'm a Machine Learning Engineer/</span>
+                      <span>MERN Stack Developer/</span>
+                      <span>Azure Developer</span>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="location-container" id="location-container">
-                <div className="click-icon-msg">
-                  <p>Click on the icon to evaluate the distance</p>
-                </div>
-                <div className="semicircular-div">
-                  <div className="inner-semicircular-div">
-                    <img
-                      src={earthgif}
-                      alt=""
-                      onClick={display_location_window}
-                    />
+                <div className="location-container" id="location-container">
+                  <div className="click-icon-msg">
+                    <p>Click on the icon to evaluate the distance</p>
+                  </div>
+                  <div className="semicircular-div">
+                    <div className="inner-semicircular-div">
+                      <img
+                        src={earthgif}
+                        alt=""
+                        onClick={display_location_window}
+                      />
+                    </div>
                   </div>
                 </div>
+                <div className={`distance_div ${!visible ? "visible" : ""}`}>
+                  <span>You are approximately</span>
+                  <span>{distance} km away from me</span>
+                </div>
+                <div className="upload-resume" id="upload-resume">
+                  <button onClick={handleDownload}>Download Resume</button>
+                </div>
               </div>
-              <div className={`distance_div ${!visible ? "visible" : ""}`}>
-                <span>You are approximately</span>
-                <span>{distance} km away from me</span>
-              </div>
-              <div className="upload-resume" id="upload-resume">
-                <button onClick={handleDownload}>Download Resume</button>
-              </div>
-            </div>
-            <div className="home-content-right">
-              <img src={elon} alt="" className="elon-pic" id="face_img" />
-              {isChatbotVisible ? <Chatbot /> : <></>}
-              <div className="chatbot-container" id="chatbot-container">
-                <div className="chat-semicircular-div">
-                  <div className="chat-inner-semicircular-div">
-                    <img
-                      src={chatgif}
-                      alt=""
-                      onClick={handleClick}
+              <div className="home-content-right">
+                <img src={elon} alt="" className="elon-pic" id="face_img" />
+                {isChatbotVisible ? <Chatbot /> : <></>}
+                <div className="chatbot-container" id="chatbot-container">
+                  <div className="chat-semicircular-div">
+                    <div className="chat-inner-semicircular-div">
+                      <img
+                        src={chatgif}
+                        alt=""
+                        onClick={handleClick}
                       // onClick={() => setIsChatBotVisible(true)}
-                    />
+                      />
+                    </div>
                   </div>
-                </div>
-                <div className="click-icon-chat">
-                  <p>Ask anything about Aditya...</p>
+                  <div className="click-icon-chat">
+                    <p>Ask anything about Aditya...</p>
+                  </div>
                 </div>
               </div>
             </div>
+            {/* <Footer/> */}
           </div>
-          {/* <Footer/> */}
-        </div>
-        
-      </>
+
+        </>
       ) : (
         <>
           <div className="mobile-home-container">
@@ -167,11 +167,9 @@ function Home() {
             <div className="mobile-welcome-msg" id="mobile-welcome-msg">
               <p>Welcome to my portfolio! I'm thrilled to have you here </p>
               <p> Grab a virtual seat and browse through my portfolio.</p>
-              <p>
-                {" "}
-                Explore my skills, projects, and experiences to get a glimpse of
-                my professional journey.
-              </p>
+            </div>
+            <div className="mobile-download-resume">
+              <button onClick={handleDownload}>Download Resume</button>
             </div>
           </div>
         </>
