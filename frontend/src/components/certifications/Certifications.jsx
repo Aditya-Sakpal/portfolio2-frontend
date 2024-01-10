@@ -76,7 +76,7 @@ function Certifications() {
         {isPopUp && (
           <div className={isMobileView ? "mobile-certificate-popup-container" : "certificate-popup-container"} onClick={() => setIsPopUp(false)}>
             <animated.div className={isMobileView ? "mobile-certificate-popup" : "certificate-popup"} onClick={(event) => event.stopPropagation()} style={{ ...springProps }}>
-              {showRotateAnimation ? <>
+              {showRotateAnimation && isMobileView ? <>
                 <div class="phone">
                 </div>
                 <div class="message">
