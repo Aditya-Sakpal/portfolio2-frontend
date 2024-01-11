@@ -105,11 +105,11 @@ function Contact() {
                   Alternate Email : aditya.as@somaiya.edu
                 </div>
                 <div className="other-social-media">
-                  <InstagramIcon sx={{ color: "white", width: "20%", height: "40%" }} onClick={() => handleLinkClick("https://www.instagram.com/aditya_sakpal123/")} />
-                  <GitHubIcon sx={{ color: "white", width: "20%", height: "40%" }} onClick={() => handleLinkClick("https://github.com/Aditya-Sakpal")} />
-                  <LinkedInIcon sx={{ color: "white", width: "20%", height: "40%" }} onClick={() => handleLinkClick("https://www.linkedin.com/in/gigacoder/")} />
-                  <TwitterIcon sx={{ color: "white", width: "20%", height: "40%" }} onClick={() => handleLinkClick("https://twitter.com/giga_coder")} />
-                  <FacebookIcon sx={{ color: "white", width: "20%", height: "40%" }} onClick={() => handleLinkClick("https://www.facebook.com/aditya.sakpal.79677")} />
+                  <InstagramIcon className='social-icon' sx={{ color: "white", width: "20%", height: "40%" }} onClick={() => handleLinkClick("https://www.instagram.com/aditya_sakpal123/")} />
+                  <GitHubIcon className='social-icon' sx={{ color: "white", width: "20%", height: "40%" }} onClick={() => handleLinkClick("https://github.com/Aditya-Sakpal")} />
+                  <LinkedInIcon className='social-icon' sx={{ color: "white", width: "20%", height: "40%" }} onClick={() => handleLinkClick("https://www.linkedin.com/in/gigacoder/")} />
+                  <TwitterIcon className='social-icon' sx={{ color: "white", width: "20%", height: "40%" }} onClick={() => handleLinkClick("https://twitter.com/giga_coder")} />
+                  <FacebookIcon className='social-icon' sx={{ color: "white", width: "20%", height: "40%" }} onClick={() => handleLinkClick("https://www.facebook.com/aditya.sakpal.79677")} />
                 </div>
               </div>
             </div>
