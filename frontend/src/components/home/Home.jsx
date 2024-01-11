@@ -4,7 +4,7 @@ import earthgif from "../../assets/earth.gif";
 import chatgif from "../../assets/chat.gif";
 import elon from "../../assets/elon.png";
 import Navbar from "../navbar/Navbar";
-import resume from "../../assets/New_Resume.pdf";
+import resume from "../../assets/New_Resume4.pdf";
 import Chatbot from "../chatbot/Chatbot";
 import { useDispatch, useSelector } from 'react-redux';
 import { showChatbot, hideChatbot } from "../../store/actions/botActions";
@@ -65,7 +65,7 @@ function Home() {
     const link = document.createElement("a");
     link.href = resume;
     link.target = "_blank";
-    link.download = "sample.pdf";
+    link.download = "gigacoder_resume.pdf";
     link.click();
   };
 
