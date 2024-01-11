@@ -63,7 +63,7 @@ function Chatbot() {
     } else {
       setMessages((prevMessages) => [
         ...prevMessages,
-        { isBot: true, msg: "Aditya does have knowledge about that sector/field" },
+        { isBot: true, msg: "I'm not trained to provide responses to such question , please ask questions related to Aditya's IT career" },
       ]);
     }
     setCurrentMessage('')
