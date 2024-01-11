@@ -30,6 +30,7 @@
     border-radius: 25px;
     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
     rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    cursor: pointer; 
     /* border: 1px solid black; */
 }
 .project-div-details::-webkit-scrollbar {
@@ -113,6 +114,7 @@
         width: 80%;
         height: 100%;
         margin-bottom: 10%;
+        
     }
     .mobile-project-div-img{
         position: relative;
