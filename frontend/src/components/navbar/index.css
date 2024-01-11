@@ -65,6 +65,7 @@ nav ul li a {
 }
 
 .giga_coder a span{
+  cursor: pointer; 
     font-size: 18px;
 }
 
