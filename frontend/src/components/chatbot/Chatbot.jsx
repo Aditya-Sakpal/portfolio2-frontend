@@ -8,11 +8,12 @@ import Navbar from "../navbar/Navbar";
 import SendIcon from '@mui/icons-material/Send';
 import axios from "axios"
 import Typed from 'typed.js';
-
+const history = useNavigate()
 
 
 function Chatbot() {
   const inputRef = useRef(null);
+  const history = useNavigate()
     useEffect(() => {
     if (sessionStorage.getItem('reloaded')) {
       history('/')
