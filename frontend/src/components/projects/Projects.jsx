@@ -11,12 +11,13 @@ function Projects() {
   const data = useSelector((state) => state.data.data)
   const history = useNavigate()
   useEffect(() => {
-    if (sessionStorage.getItem('reloaded')) {
+    const storedDataString = localStorage.getItem('data');
+    if (storedDataString) {
+      const storedData = JSON.parse(storedDataString);
+      setProjects(storedData.projects);
+    }else{
       history('/')
-      sessionStorage.removeItem('reloaded');
-    }else if (data){
-      setProjects(data.projects);
-    } 
+    }
   }, []);
 
   window.addEventListener('beforeunload', function () {
