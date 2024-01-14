@@ -5,12 +5,12 @@ import { useSelector } from "react-redux";
 import { useNavigate } from 'react-router-dom';
 function Education() {
     const history = useNavigate()
-    // useEffect(() => {
-    //   if (sessionStorage.getItem('reloaded')) {
-    //     history('/')
-    //     sessionStorage.removeItem('reloaded');
-    //   }
-    // }, []);
+    useEffect(() => {
+      if (sessionStorage.getItem('reloaded')) {
+        history('/')
+        sessionStorage.removeItem('reloaded');
+      }
+    }, []);
     const isMobileView = useSelector((state) => state.mobileView.isMobileView);
     return (
         <>
