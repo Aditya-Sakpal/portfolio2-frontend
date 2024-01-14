@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./index.css";
 import earthgif from "../../assets/earth.gif";
 import chatgif from "../../assets/chat.gif";
-import elon from "../../assets/elon.png";
+import elon from "../../assets/aditya-avatar-removebg.png";
 import Navbar from "../navbar/Navbar";
 import resume from "../../assets/New_Resume4.pdf";
 import Chatbot from "../chatbot/Chatbot";
