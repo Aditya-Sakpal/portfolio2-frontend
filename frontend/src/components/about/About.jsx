@@ -3,20 +3,10 @@ import "./index.css";
 import Navbar from "../navbar/Navbar";
 import img from "../../assets/elon2.jpg";
 import { useSelector } from "react-redux";
-import { useNavigate } from 'react-router-dom';
+
 
 function About() {
-  const history = useNavigate()
-  useEffect(() => {
-    if (sessionStorage.getItem('reloaded')) {
-      history('/')
-      sessionStorage.removeItem('reloaded');
-    }
-  }, []);
 
-  window.addEventListener('beforeunload', function () {
-    sessionStorage.setItem('reloaded', true);
-  });
   const isMobileView = useSelector((state) => state.mobileView.isMobileView);
   return (
     <>
