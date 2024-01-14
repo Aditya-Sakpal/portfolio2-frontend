@@ -1,7 +1,7 @@
 import React ,{useEffect}from "react";
 import "./index.css";
 import Navbar from "../navbar/Navbar";
-import img from "../../assets/elon2.jpg";
+import img from "../../assets/aditya-light.jpg";
 import { useSelector } from "react-redux";
 
 
