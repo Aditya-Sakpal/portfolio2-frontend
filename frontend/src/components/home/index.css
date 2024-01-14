@@ -161,10 +161,10 @@
 .elon-pic {
   position: absolute;
   bottom: 0%;
-  left: 50%;
-  height: 65vh;
-  width: 27vw;
-  mix-blend-mode: multiply;
+  left: 55%;
+  height: 90%;
+  width: 25%;
+  mix-blend-mode:darken;
 }
 
 .intro-container {
@@ -395,17 +395,19 @@
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
     /* border: 1px solid black; */
+    
     height: 100%;
     width: 60%;
   }
   .mobile-intro-div-img img {
     position: absolute;
     bottom: 0;
-    /* left: 1rem; */
+    /* border: 1px solid black; */
+    left: 12rem;
     /* top: 9rem; */
     border-bottom-right-radius: 25px;
     width: 50%;
-    height: 70%;
+    height: 75%;
   }
   .mobile-intro-div-text-roles {
     position: relative;
