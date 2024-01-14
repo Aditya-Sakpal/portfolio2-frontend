@@ -13,7 +13,12 @@ import Typed from 'typed.js';
 
 function Chatbot() {
   const inputRef = useRef(null);
-
+    useEffect(() => {
+    if (sessionStorage.getItem('reloaded')) {
+      history('/')
+      sessionStorage.removeItem('reloaded');
+    }
+  }, []);
   const dispatch = useDispatch();
   const [messages, setMessages] = useState([
     { isBot: true, msg: "Hello I'm Lisa Aditya's spokeperson , how may I help you ?" }
