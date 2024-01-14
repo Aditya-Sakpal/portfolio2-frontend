@@ -13,14 +13,13 @@ import { useNavigate } from 'react-router-dom';
 function Feedback() {
   const history = useNavigate();
   useEffect(() => {
-    const storedDataString = localStorage.getItem('data');
-    if (storedDataString) {
-      const storedData = JSON.parse(storedDataString);
-      setFeeds(storedData.feedbacks.reverse());
-      setLabelCount(countLabelOccurrences(feeds))
-    } else {
+    if (sessionStorage.getItem('reloaded')) {
       history('/')
-    }
+      sessionStorage.removeItem('reloaded');
+    }else if (data){
+      setFeeds(data.feedbacks.reverse());
+      setLabelCount(countLabelOccurrences(feeds))
+    } 
   }, []);
 
   window.addEventListener('beforeunload', function () {
