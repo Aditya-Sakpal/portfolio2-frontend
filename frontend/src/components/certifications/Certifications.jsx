@@ -22,17 +22,18 @@ function Certifications() {
   })
 
   useEffect(() => {
-    if (sessionStorage.getItem('reloaded')) {
+    const storedDataString = localStorage.getItem('data');
+    if (storedDataString) {
+      const storedData = JSON.parse(storedDataString);
+      setCertifications(storedData.certifications);
+    }else{
       history('/')
-      sessionStorage.removeItem('reloaded');
-    } else if (data) {
-      setCertifications(data.certifications);
     }
   }, []);
 
-  window.addEventListener('beforeunload', function () {
-    sessionStorage.setItem('reloaded', true);
-  });
+  // window.addEventListener('beforeunload', function () {
+  //   sessionStorage.setItem('reloaded', true);
+  // });
 
   const renderImage = imageData => {
     const arrayBufferView = new Uint8Array(imageData);
