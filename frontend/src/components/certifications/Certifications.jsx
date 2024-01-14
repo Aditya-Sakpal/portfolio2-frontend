@@ -22,14 +22,14 @@ function Certifications() {
   })
 
   useEffect(() => {
-    const storedDataString = localStorage.getItem('data');
-    if (storedDataString) {
-      const storedData = JSON.parse(storedDataString);
-      setCertifications(storedData.certifications);
-    }else{
+    if (sessionStorage.getItem('reloaded')) {
       history('/')
+      sessionStorage.removeItem('reloaded');
+    } else if (data) {
+      setCertifications(data.certifications);
     }
   }, []);
+
 
   // window.addEventListener('beforeunload', function () {
   //   sessionStorage.setItem('reloaded', true);
