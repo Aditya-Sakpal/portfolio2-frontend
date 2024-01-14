@@ -173,6 +173,8 @@ export function mobileHomePageAnimation(requiredTime) {
     var mobileWelcomeMsg = document.getElementById("mobile-welcome-msg");
     mobileWelcomeMsg.classList.add("mobile-animate-slideLeft");
 
+    var mobileResume = document.getElementById("mobile-download-resume")
+    mobileResume.classList.add("mobile-animate-slideRight")
   }, requiredTime);
 }
 
