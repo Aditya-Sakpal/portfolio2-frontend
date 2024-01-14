@@ -2,16 +2,9 @@ import React ,{useEffect}from "react";
 import "./index.css";
 import Navbar from "../navbar/Navbar";
 import { useSelector } from "react-redux";
-import { useNavigate } from 'react-router-dom'; 
 function Skills() {
   const isMobileView = useSelector((state) => state.mobileView.isMobileView);
-  const history = useNavigate()
-  useEffect(() => {
-    if (sessionStorage.getItem('reloaded')) {
-      history('/')
-      sessionStorage.removeItem('reloaded');
-    }
-  }, []);
+
   return (
     <>
       <Navbar />
