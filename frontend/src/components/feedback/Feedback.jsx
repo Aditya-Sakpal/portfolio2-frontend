@@ -13,13 +13,14 @@ import { useNavigate } from 'react-router-dom';
 function Feedback() {
   const history = useNavigate();
   useEffect(() => {
-    if (sessionStorage.getItem('reloaded')) {
-      history('/')
-      sessionStorage.removeItem('reloaded');
-    }else if (data){
-      setFeeds(data.feedbacks.reverse());
+    const storedDataString = localStorage.getItem('data');
+    if (storedDataString) {
+      const storedData = JSON.parse(storedDataString);
+      setFeeds(storedData.feedbacks.reverse());
       setLabelCount(countLabelOccurrences(feeds))
-    } 
+    } else {
+      history('/')
+    }
   }, []);
 
   window.addEventListener('beforeunload', function () {
@@ -132,7 +133,7 @@ function Feedback() {
           console.log("I was closed by the timer");
         }
       });
-      const response = await axios.post('https://portfolio2-backend-xi.vercel.app/feedbacks', { name, feedback })
+      const response = await axios.post(`${window.location.origin}/feedbacks`, { name, feedback })
       setFeeds(response.data.feedbacks.reverse())
 
       dispatch(fetchData())
