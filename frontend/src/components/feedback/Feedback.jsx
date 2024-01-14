@@ -133,7 +133,7 @@ function Feedback() {
           console.log("I was closed by the timer");
         }
       });
-      const response = await axios.post(`${window.location.origin}/feedbacks`, { name, feedback })
+      const response = await axios.post('https://portfolio2-backend-xi.vercel.app/feedbacks', { name, feedback })
       setFeeds(response.data.feedbacks.reverse())
 
       dispatch(fetchData())
@@ -211,7 +211,7 @@ function Feedback() {
             </div>
             <div className="mobile-feedback-top-right" id="mobile-feedback-top-right">
               <div id="chart" className="chart" >
-                <ReactApexChart options={chartState.options} series={chartState.series} type="pie" width={"100%"} height={"100%"} />
+                <ReactApexChart options={chartState.options} series={chartState.series} type="pie" width="90%" height="90%" />
               </div>
             </div>
 
