@@ -15,12 +15,12 @@ import { useNavigate } from 'react-router-dom';
 
 function Contact() {
   const history = useNavigate()
-  useEffect(() => {
-    if (sessionStorage.getItem('reloaded')) {
-      history('/')
-      sessionStorage.removeItem('reloaded');
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (sessionStorage.getItem('reloaded')) {
+  //     history('/')
+  //     sessionStorage.removeItem('reloaded');
+  //   }
+  // }, []);
   function handleLinkClick(url) {
     window.open(url, '_blank');
   }
