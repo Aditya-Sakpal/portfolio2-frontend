@@ -11,16 +11,10 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import EmailIcon from '@mui/icons-material/Email';
 import Swal from 'sweetalert2';
 import { useSelector } from "react-redux";
-import { useNavigate } from 'react-router-dom'; 
+
 
 function Contact() {
-  const history = useNavigate()
-  useEffect(() => {
-    if (sessionStorage.getItem('reloaded')) {
-      history('/')
-      sessionStorage.removeItem('reloaded');
-    }
-  }, []);
+
   function handleLinkClick(url) {
     window.open(url, '_blank');
   }
