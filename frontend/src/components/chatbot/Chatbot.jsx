@@ -8,18 +8,11 @@ import Navbar from "../navbar/Navbar";
 import SendIcon from '@mui/icons-material/Send';
 import axios from "axios"
 import Typed from 'typed.js';
-import { useNavigate } from 'react-router-dom'; 
 
 
 function Chatbot() {
   const inputRef = useRef(null);
-  const history = useNavigate()
-    useEffect(() => {
-    if (sessionStorage.getItem('reloaded')) {
-      history('/')
-      sessionStorage.removeItem('reloaded');
-    }
-  }, []);
+
   const dispatch = useDispatch();
   const [messages, setMessages] = useState([
     { isBot: true, msg: "Hello I'm Lisa Aditya's spokeperson , how may I help you ?" }
