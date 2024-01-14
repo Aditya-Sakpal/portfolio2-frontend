@@ -8,7 +8,7 @@ import Navbar from "../navbar/Navbar";
 import SendIcon from '@mui/icons-material/Send';
 import axios from "axios"
 import Typed from 'typed.js';
-const history = useNavigate()
+import { useNavigate } from 'react-router-dom'; 
 
 
 function Chatbot() {
