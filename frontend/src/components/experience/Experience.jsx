@@ -12,12 +12,13 @@ function Experience() {
   const data = useSelector((state) => state.data.data)
   const history = useNavigate()
   useEffect(() => {
-    if (sessionStorage.getItem('reloaded')) {
+    const storedDataString = localStorage.getItem('data');
+    if (storedDataString) {
+      const storedData = JSON.parse(storedDataString);
+      setExperience(storedData.experience);
+    }else{
       history('/')
-      sessionStorage.removeItem('reloaded');
-    }else if (data){
-      setExperience(data.experience);
-    } 
+    }
   }, []);
 
   window.addEventListener('beforeunload', function () {
