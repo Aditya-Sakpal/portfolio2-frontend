@@ -80,7 +80,14 @@
     overflow-y: scroll;
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none; 
 }
+
+.project-div-details::-webkit-scrollbar {
+    display: none;
+  }
+
 .project-div-details h3{
     position: relative;
     text-align: center;
