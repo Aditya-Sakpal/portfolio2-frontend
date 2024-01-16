@@ -181,6 +181,9 @@
     /* border: 1px solid black; */
     background-color:  #1c1d20;
 }
+.feedback-details p::-webkit-scrollbar {
+    display: none;
+}
 .swal2-title{
     background-color:  #1c1d20;   
 }
