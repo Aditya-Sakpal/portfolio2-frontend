@@ -366,20 +366,25 @@
   .mobile-intro-div {
     display: flex;
     position: relative;
+    justify-content: center;
+    align-items: center ;
     top: 0;
     height: 60%;
     border-radius: 25px;
     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
       rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
     width: 100%;
+
   }
   .mobile-intro-div-text {
     padding: 20px;
-    border-top-left-radius: 25px;
-    border-bottom-left-radius: 25px;
+    border-radius: 25px;
     /* border: 1px solid black; */
+    /* text-align: center; */
+    justify-content: center;
+    align-items: center;
     height: 100%;
-    width: 50%;
+    width: 100%;
     color: white;
   }
   .mobile-intro-div-text span {
@@ -391,14 +396,14 @@
   .mobile-intro-div-text span:first-child{
     font-size: 18px;
   }
-  .mobile-intro-div-img {
+  /* .mobile-intro-div-img {
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
-    /* border: 1px solid black; */
+    border: 1px solid black;
     
     height: 100%;
     width: 60%;
-  }
+  } */
   .mobile-intro-div-img img {
     position: absolute;
     bottom: 0;
