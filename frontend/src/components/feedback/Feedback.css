@@ -182,7 +182,10 @@
     background-color:  #1c1d20;
 }
 .feedback-details p::-webkit-scrollbar {
-    display: none;
+    display: none !important;
+}
+.feedback-details p::-webkit-scrollbar {
+    width: 0 !important; /* Set the width to 0 to hide the scrollbar */
 }
 .swal2-title{
     background-color:  #1c1d20;   
