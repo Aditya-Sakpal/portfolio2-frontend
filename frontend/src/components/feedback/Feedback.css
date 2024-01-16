@@ -204,7 +204,7 @@
     .mobile-feedback-container{
         /* margin-top: 1%; */
         width: 100vw;
-        height: 67vh;
+        height: 70vh;
         /* padding: 10%; */
         display: flex;
         flex-direction: column;
@@ -246,7 +246,7 @@
         /* border: 1px solid black; */
     }
     .chart{
-        width: 95%;
+        width: 75%;
         height: 100%;
     }
     .mobile-feedback-bottom{
