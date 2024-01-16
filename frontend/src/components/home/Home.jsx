@@ -152,21 +152,24 @@ function Home() {
           <div className="mobile-home-container">
             <div className="mobile-intro-div" id="mobile-intro-div">
               <div className="mobile-intro-div-text">
-                <span>Hello,it's me</span>
-                <span className="name"> Aditya.Ashish.Sakpal</span>
+                <div className="mobile-intro-div-name">
+                  <span>Hello,it's me</span>
+                  <span className="name"> Aditya.Ashish.Sakpal</span>
+                </div>
                 <div className="mobile-intro-div-text-roles">
                   <span>I'm a MERN Stack Developer/</span>
                   <span>Machine Learning Engineer/</span>
                   <span>Azure Developer</span>
                 </div>
-              </div>
-              <div className="mobile-intro-div-img">
-                {/* <img src={elon} alt="" className="elon-pic" /> */}
+                <div className="mobile-intro-welcome">
+                <p>Welcome to my portfolio/techfolio! </p>
+                <p> I'm thrilled to have you here , exploring my portfolio.</p>
+                </div>
               </div>
             </div>
             <div className="mobile-welcome-msg" id="mobile-welcome-msg">
-              <p>Welcome to my portfolio! I'm thrilled to have you here </p>
-              <p> Grab a virtual seat and browse through my portfolio.</p>
+            <p>Whether you're a potential collaborator, a fellow creator, or just someone with a curious mind, I'm delighted to share my passion and work with you</p>
+            <p>Grab a virtual seat and browse through my portfolio.</p>
               <p>Explore my skills, projects, and experiences to get a glimpse of
                 my professional journey</p>
             </div>
