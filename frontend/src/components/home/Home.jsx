@@ -124,7 +124,7 @@ function Home() {
                 </div>
               </div>
               <div className="home-content-right">
-                <img src={elon} alt="" className="elon-pic" id="face_img" />
+                {/* <img src={elon} alt="" className="elon-pic" id="face_img" /> */}
                 {isChatbotVisible ? <Chatbot /> : <></>}
                 <div className="chatbot-container" id="chatbot-container">
                   <div className="chat-semicircular-div">
