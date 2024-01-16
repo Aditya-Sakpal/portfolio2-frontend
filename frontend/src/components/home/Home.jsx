@@ -4,7 +4,7 @@ import earthgif from "../../assets/earth.gif";
 import chatgif from "../../assets/chat.gif";
 import elon from "../../assets/aditya-avatar-removebg.png";
 import Navbar from "../navbar/Navbar";
-import resume from "../../assets/New_Resume4.pdf";
+import resume from "../../assets/New_Resume.pdf";
 import Chatbot from "../chatbot/Chatbot";
 import { useDispatch, useSelector } from 'react-redux';
 import { showChatbot, hideChatbot } from "../../store/actions/botActions";
@@ -65,7 +65,7 @@ function Home() {
     const link = document.createElement("a");
     link.href = resume;
     link.target = "_blank";
-    link.download = "gigacoder_resume.pdf";
+    link.download = "sample.pdf";
     link.click();
   };
 
@@ -155,13 +155,13 @@ function Home() {
                 <span>Hello,it's me</span>
                 <span className="name"> Aditya.Ashish.Sakpal</span>
                 <div className="mobile-intro-div-text-roles">
-                  <span>I'm a Machine Learning Engineer/</span>
-                  <span>MERN Stack Developer/</span>
+                  <span>I'm a MERN Stack Developer/</span>
+                  <span>Machine Learning Engineer/</span>
                   <span>Azure Developer</span>
                 </div>
               </div>
               <div className="mobile-intro-div-img">
-                <img src={elon} alt="" className="elon-pic" />
+                {/* <img src={elon} alt="" className="elon-pic" /> */}
               </div>
             </div>
             <div className="mobile-welcome-msg" id="mobile-welcome-msg">
@@ -170,7 +170,7 @@ function Home() {
               <p>Explore my skills, projects, and experiences to get a glimpse of
                 my professional journey</p>
             </div>
-            <div className="mobile-download-resume">
+            <div className="mobile-download-resume" id="mobile-download-resume">
               <button onClick={handleDownload}>Download Resume</button>
             </div>
           </div>
