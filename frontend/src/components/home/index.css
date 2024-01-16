@@ -369,7 +369,7 @@
     justify-content: center;
     align-items: center ;
     top: 0;
-    height: 60%;
+    height: 50%;
     border-radius: 25px;
     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
       rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
@@ -377,8 +377,10 @@
 
   }
   .mobile-intro-div-text {
-    padding: 20px;
+    padding: 7%;
     border-radius: 25px;
+    display: flex;
+    flex-direction: column;
     /* border: 1px solid black; */
     /* text-align: center; */
     justify-content: center;
@@ -391,10 +393,16 @@
     position: relative;
     /* top:4%; */
     /* border: 1px solid black; */
-    font-size: 25px;
+    font-size: 130%;
   }
   .mobile-intro-div-text span:first-child{
-    font-size: 18px;
+    font-size: 100%;
+  }
+  .mobile-intro-div-name{
+    position: relative;
+    width: 100%;
+    height: 20%;
+    /* border: 1px solid black; */
   }
   /* .mobile-intro-div-img {
     border-top-right-radius: 25px;
@@ -404,43 +412,62 @@
     height: 100%;
     width: 60%;
   } */
-  .mobile-intro-div-img img {
+  /* .mobile-intro-div-img img {
     position: absolute;
     bottom: 0;
-    /* border: 1px solid black; */
+    border: 1px solid black;
     left: 12rem;
-    /* top: 9rem; */
+    top: 9rem;
     border-bottom-right-radius: 25px;
     width: 50%;
     height: 75%;
-  }
+  } */
   .mobile-intro-div-text-roles {
     position: relative;
-    top: 15%;
+    /* top: 2%; */
     width: 100%;
+    /* height: 20%; */
     height: fit-content;
     text-wrap: wrap;
     /* border: 1px solid black; */
   }
+  .mobile-intro-welcome{
+    position: relative;
+    width: 100%;
+  }
   .mobile-intro-div-text-roles span {
     font-size: 15px;
   }
-
+  .mobile-delight-msg{
+    margin-top: 2%;
+    width: 100%;
+    height: 20%;
+    color: white;
+    border-radius: 25px;
+    border: none;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+      rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  }
   .mobile-welcome-msg {
-    margin-top: 5%;
+    margin-top: 2%;
     /* margin-bottom: 5%; */
     /* display: flex; */
     position: relative;
     top: 0;
-    height: fit-content;
+    /* height: fit-content; */
+    height: 30%;
     border-radius: 25px;
     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
       rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
     width: 100%;
     /* flex-grow: 1; */
     padding: 3%;
-    font-size: 15px;
+    font-size:80%;
     color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   .mobile-download-resume{
     position: relative;
