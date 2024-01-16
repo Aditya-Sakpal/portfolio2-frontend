@@ -359,9 +359,12 @@
   .mobile-home-container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
     overflow-y: scroll;
     height: 70vh;
     padding: 10px;
+    /* border: 1px solid black; */
   }
   .mobile-intro-div {
     display: flex;
