@@ -11,9 +11,6 @@ export function pcHomePageAnimation(requiredTime) {
     var cv_div = document.getElementById("upload-resume");
     cv_div.classList.add("animate-slideBottom1");
 
-    var face_img = document.getElementById("face_img");
-    face_img.classList.add("animate-slideBottom2");
-
     var container = document.getElementById("location-container");
     container.classList.add("animate-slideLeft");
 
